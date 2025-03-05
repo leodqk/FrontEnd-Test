@@ -1,70 +1,135 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Mục Lục
 
-In the project directory, you can run:
 
-### `npm start`
+- [Tính Năng](#tính-năng)
+- [Cài Đặt](#cài-đặt)
+- [Cấu Trúc Dự Án](#cấu-trúc-dự-án)
+- [Sử Dụng](#sử-dụng)
+- [API](#api)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tính Năng
 
-### `npm run build`
+### 1. Tìm Số Bị Thiếu
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Nhập một mảng các số nguyên dương liên tiếp có một số bị thiếu
+- Thuật toán sẽ tìm và hiển thị số bị thiếu
+- Trực quan hóa mảng và số bị thiếu
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Kiểm Tra Mật Khẩu
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Kiểm tra mật khẩu dựa trên các tiêu chí bảo mật
+- Hiển thị trạng thái đáp ứng từng yêu cầu theo thời gian thực
+- Các tiêu chí bao gồm: độ dài, chữ hoa, chữ số và ký tự đặc biệt
 
-### `npm run eject`
+### 3. Ảnh Chó Ngẫu Nhiên
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Tải và hiển thị ảnh chó ngẫu nhiên từ Dog CEO API
+- Hỗ trợ tải nhiều ảnh (lên đến 100 ảnh)
+- Phân trang kết quả để dễ dàng duyệt qua các ảnh
+- Tối ưu hóa hiệu suất tải ảnh
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Cài Đặt
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Yêu Cầu
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Node.js (phiên bản 14.0.0 trở lên)
+- npm hoặc yarn
 
-## Learn More
+### Các Bước Cài Đặt
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone repository:
+```bash
+git clone https://github.com/leodqk/FrontEnd-Test.git
+cd frontend-test
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Cài đặt các gói phụ thuộc:
+```bash
+npm install
+# hoặc
+yarn install
+```
 
-### Code Splitting
+3. Khởi chạy ứng dụng ở môi trường phát triển:
+```bash
+npm start
+# hoặc
+yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Mở trình duyệt và truy cập [http://localhost:3000](http://localhost:3000)
 
-### Analyzing the Bundle Size
+## Cấu Trúc Dự Án
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+src/
+├── api/                    # Các dịch vụ API
+│   ├── index.js            # Export tất cả API
+│   └── dogApi.js           # API lấy ảnh chó
+├── components/             # Các thành phần React
+│   ├── Header.js           # Tiêu đề ứng dụng
+│   ├── Footer.js           # Chân trang
+│   ├── TabNavigation.js    # Điều hướng tab
+│   ├── MissingNumberTab.js # Tab tìm số bị thiếu
+│   ├── PasswordValidatorTab.js # Tab kiểm tra mật khẩu
+│   ├── DogImagesTab.js     # Tab ảnh chó ngẫu nhiên
+│   ├── CodeBlock.js        # Hiển thị mã nguồn
+│   └── ResultDisplay.js    # Hiển thị kết quả
+├── utils/                  # Tiện ích và hàm helper
+│   └── algorithms.js       # Triển khai thuật toán
+├── App.js                  # Component chính
+├── App.css                 # Styles cho ứng dụng
+└── index.js                # Điểm khởi đầu ứng dụng
+```
 
-### Making a Progressive Web App
+## Sử Dụng
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Tìm Số Bị Thiếu
 
-### Advanced Configuration
+1. Chọn tab "Tìm Số Bị Thiếu"
+2. Nhập một mảng các số nguyên dương cách nhau bởi dấu phẩy (ví dụ: 1,2,3,5)
+3. Nhấn nút "Tìm Số Bị Thiếu"
+4. Kết quả và trực quan hóa sẽ hiển thị
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Kiểm Tra Mật Khẩu
 
-### Deployment
+1. Chọn tab "Kiểm Tra Mật Khẩu"
+2. Nhập mật khẩu cần kiểm tra
+3. Các yêu cầu sẽ được cập nhật theo thời gian thực
+4. Nhấn nút "Kiểm Tra Mật Khẩu" để xem kết quả cuối cùng
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Ảnh Chó Ngẫu Nhiên
 
-### `npm run build` fails to minify
+1. Chọn tab "Ảnh Chó Ngẫu Nhiên"
+2. Nhập số lượng ảnh muốn hiển thị (1-100)
+3. Nhấn nút "Tải Ảnh"
+4. Sử dụng các nút phân trang để xem tất cả ảnh
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## API
+
+Ứng dụng sử dụng [Dog CEO API](https://dog.ceo/dog-api/) để lấy ảnh chó ngẫu nhiên.
+
+Các endpoint sử dụng:
+- `https://dog.ceo/api/breeds/image/random` - Lấy một ảnh chó ngẫu nhiên
+- `https://dog.ceo/api/breeds/image/random/{count}` - Lấy nhiều ảnh chó ngẫu nhiên
+
+
+## Liên Hệ
+
+Nếu bạn có bất kỳ câu hỏi nào hoặc muốn báo cáo lỗi, vui lòng mở một issue trên GitHub hoặc liên hệ qua email: leo.dqk@email.com.
+
+## Lời Cảm Ơn
+
+- [Dog CEO API](https://dog.ceo/dog-api/) - Cung cấp API ảnh chó miễn phí
+- [React](https://reactjs.org/) - Thư viện JavaScript để xây dựng giao diện người dùng
+- [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter) - Làm nổi bật cú pháp cho các đoạn mã
+- [Font Awesome](https://fontawesome.com/) - Thư viện biểu tượng
+
+---
+
+Được phát triển với ❤️ bởi [Dương Quang Khải](https://github.com/leodqk)
